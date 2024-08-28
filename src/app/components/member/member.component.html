@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="filters">
+      <select [(ngModel)]="category">
+        <option value="All Job Category">All Job Category</option>
+        <!-- Add more options -->
+      </select>
+      <select [(ngModel)]="type">
+        <option value="All Job Type">All Job Type</option>
+        <option value="All Job Type">Medical</option>
+        <option value="All Job Type">Driver</option>
+        
+      </select>
+      <select [(ngModel)]="location">
+        <option value="All Job Location">All Job Location</option>
+        <option value="Islamabad">Islamabad</option>
+        <option value="Islamabad">Rawalpindi</option>
+      </select>
+    </div>
+  
+    <div class="job-list">
+      <div *ngFor="let job of jobs" class="job-item">
+        <div class="job-info">
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.categories.join(', ') }}</p>
+        </div>
+        <div class="job-location">
+          <p>{{ job.location }}</p>
+          <a [routerLink]="['/jobform']">More Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>

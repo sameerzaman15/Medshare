@@ -1,0 +1,54 @@
+<div class="job-form-container">
+    <h2>Apply for {{ jobCategory }} Position</h2>
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="job-form">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" formControlName="fullName" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" formControlName="phone" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="experience">Years of Experience</label>
+        <input id="experience" type="number" formControlName="experience" required>
+      </div>
+  
+      <ng-container *ngIf="jobCategory === 'Medical Staff'">
+        <div class="form-group">
+          <label for="medicalLicense">Medical License Number</label>
+          <input id="medicalLicense" type="text" formControlName="medicalLicense" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="specialization">Specialization</label>
+          <select id="specialization" formControlName="specialization" required>
+            <option value="">Select Specialization</option>
+            <option value="general">General Practice</option>
+            <option value="nursing">Nursing</option>
+            <option value="pharmacy">Pharmacy</option>
+          </select>
+        </div>
+      </ng-container>
+  
+      <div class="form-group">
+        <label for="availability">Availability</label>
+        <select id="availability" formControlName="availability" required>
+          <option value="">Select Availability</option>
+          <option value="fulltime">Full Time</option>
+          <option value="parttime">Part Time</option>
+          <option value="contract">Contract</option>
+        </select>
+      </div>
+
+  
+      <button type="submit" [disabled]="!jobForm.valid">Submit Application</button>
+    </form>
+  </div>
