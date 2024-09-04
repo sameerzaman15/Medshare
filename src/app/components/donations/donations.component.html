@@ -1,1 +1,30 @@
-<p>donations works!</p>
+<div class="donation-container">
+    <div class="donation-header">
+      <h1>Support our Cause!</h1>
+      <p>Donate to help us make a difference.</p>
+    </div>
+    <div class="donation-form">
+      <label for="donation-amount">Donation Amount:</label>
+      <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter your donation amount" required>
+
+      <label for="payment-method">Payment Method:</label>
+      <div class="payment-options">
+        <label for="visa">
+          <img src="assets/MedwayBranding/visalogo.PNG" alt="Visa">
+          <input type="radio" id="visa" name="payment-method" value="visa" checked>
+        </label>
+        <label for="mastercard">
+          <img src="assets/MedwayBranding/mastercardlogo.PNG" alt="Mastercard">
+          <input type="radio" id="mastercard" name="payment-method" value="mastercard">
+        </label>
+      </div>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit">Donate Now</button>
+    </div>
+  </div>
